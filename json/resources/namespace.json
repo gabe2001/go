@@ -1,0 +1,164 @@
+{
+  "$class" : "com.hpe.tslabs.namespace.HeterogeneousItems",
+  "$keyClass" : "java.lang.String",
+  "mapOfIntegers" : {
+    "$class" : "com.hpe.tslabs.namespace.HeterogeneousItems",
+    "$keyClass" : "java.lang.String",
+    "$meta" : {
+      "$class" : "java.util.concurrent.ConcurrentHashMap",
+      "$keyClass" : "java.lang.String",
+      "$valueClass" : "java.lang.String",
+      "$value" : {
+        "created" : "2022-02-22T22:22:22.222Z",
+        "name" : "items"
+      }
+    },
+    "one" : {
+      "$class" : "java.lang.Integer",
+      "$value" : 1
+    },
+    "two" : {
+      "$class" : "java.lang.Integer",
+      "$value" : 2
+    },
+    "three" : {
+      "$class" : "java.lang.Integer",
+      "$value" : 3
+    }
+  },
+  "aString" : {
+    "$class" : "java.lang.String",
+    "$value" : "The lazy fox!"
+  },
+  "mapLostKeyTypeInteger" : {
+    "$class" : "java.util.LinkedHashMap",
+    "$keyClass" : "java.lang.Integer",
+    "$valueClass" : "java.lang.Integer",
+    "$value" : {
+      "1" : 100,
+      "2" : 200
+    }
+  },
+  "aLong" : {
+    "$class" : "java.lang.Long",
+    "$value" : 1
+  },
+  "$meta" : {
+    "$class" : "java.util.concurrent.ConcurrentHashMap",
+    "$keyClass" : "java.lang.String",
+    "$valueClass" : "java.lang.String",
+    "$value" : {
+      "created" : "2022-02-22T22:22:22.222Z",
+      "name" : "items"
+    }
+  },
+  "aFloat" : {
+    "$class" : "java.lang.Double",
+    "$value" : 0.1
+  },
+  "aDouble" : {
+    "$class" : "java.lang.Double",
+    "$value" : 3.141592653589793
+  },
+  "innerItems" : {
+    "$class" : "com.hpe.tslabs.namespace.HeterogeneousItems",
+    "$keyClass" : "java.lang.String",
+    "100" : {
+      "$class" : "java.lang.Integer",
+      "$value" : 100
+    },
+    "200" : {
+      "$class" : "java.lang.Integer",
+      "$value" : 200
+    },
+    "$meta" : {
+      "$class" : "java.util.concurrent.ConcurrentHashMap",
+      "$keyClass" : "java.lang.String",
+      "$valueClass" : "java.lang.String",
+      "$value" : {
+        "created" : "2022-02-22T22:22:22.222Z",
+        "name" : "items"
+      }
+    }
+  },
+  "anInteger" : {
+    "$class" : "java.lang.Integer",
+    "$value" : 42
+  },
+  "mapLostKeyTypeString" : {
+    "$class" : "java.util.LinkedHashMap",
+    "$keyClass" : "java.lang.String",
+    "$valueClass" : "java.lang.Integer",
+    "$value" : {
+      "1" : 100,
+      "2" : 200
+    }
+  },
+  "mixedBag" : {
+    "$class" : "java.util.ArrayList",
+    "$valueClass" : "com.hpe.tslabs.namespace.HeterogeneousItems",
+    "$value" : [ {
+      "$class" : "com.hpe.tslabs.namespace.HeterogeneousItems",
+      "$keyClass" : "java.lang.String",
+      "listOfStrings" : {
+        "$class" : "java.util.ArrayList",
+        "$valueClass" : "java.lang.String",
+        "$value" : [ "one", "two", "three" ]
+      },
+      "$meta" : {
+        "$class" : "java.util.concurrent.ConcurrentHashMap",
+        "$keyClass" : "java.lang.String",
+        "$valueClass" : "java.lang.String",
+        "$value" : {
+          "created" : "2022-02-22T22:22:22.222Z",
+          "name" : "items"
+        }
+      }
+    }, {
+      "$class" : "com.hpe.tslabs.namespace.HeterogeneousItems",
+      "$keyClass" : "java.lang.String",
+      "$meta" : {
+        "$class" : "java.util.concurrent.ConcurrentHashMap",
+        "$keyClass" : "java.lang.String",
+        "$valueClass" : "java.lang.String",
+        "$value" : {
+          "created" : "2022-02-22T22:22:22.222Z",
+          "name" : "items"
+        }
+      },
+      "listOfIntegers" : {
+        "$class" : "java.util.ArrayList",
+        "$valueClass" : "java.lang.Integer",
+        "$value" : [ 8, 11, 12, 13 ]
+      }
+    }, {
+      "$class" : "com.hpe.tslabs.namespace.HeterogeneousItems",
+      "$keyClass" : "java.lang.String",
+      "$meta" : {
+        "$class" : "java.util.concurrent.ConcurrentHashMap",
+        "$keyClass" : "java.lang.String",
+        "$valueClass" : "java.lang.String",
+        "$value" : {
+          "created" : "2022-02-22T22:22:22.222Z",
+          "name" : "items"
+        }
+      },
+      "one" : {
+        "$class" : "java.lang.Integer",
+        "$value" : 1
+      },
+      "two" : {
+        "$class" : "java.lang.Integer",
+        "$value" : 2
+      },
+      "three" : {
+        "$class" : "java.lang.Integer",
+        "$value" : 3
+      }
+    } ]
+  },
+  "aByte" : {
+    "$class" : "java.lang.Byte",
+    "$value" : 13
+  }
+}

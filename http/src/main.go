@@ -29,7 +29,10 @@ func main() {
 	r.HandleFunc("/contacts/{name}", deleteContact).Methods("DELETE")
 	r.HandleFunc("/shutdown", shutdown).Methods("GET")
 	startServer()
-	fmt.Println("exit")
+	_, err := fmt.Println("exit")
+	if err != nil {
+		return
+	}
 }
 
 func initData() {
@@ -55,50 +58,56 @@ func shutdownServer() {
 	}
 }
 
-func shutdown(w http.ResponseWriter, r *http.Request) {
+func shutdown(w http.ResponseWriter, _ *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode("")
+	jsonEncode(w, "")
 	shutdownServer()
 }
 
-func getContacts(w http.ResponseWriter, r *http.Request) {
+func getContacts(w http.ResponseWriter, _ *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(contacts)
+	jsonEncode(w, contacts)
 }
 
 func getContact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	for idx, item := range contacts {
-		fmt.Println(idx)
+		_, err := fmt.Println(idx)
+		if err != nil {
+			return
+		}
 		if item.Name == params["name"] {
-			json.NewEncoder(w).Encode(item)
+			jsonEncode(w, item)
 			return
 		}
 	}
-	json.NewEncoder(w).Encode(&Contact{})
+	jsonEncode(w, &Contact{})
 }
 
 func createContact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var contact Contact
-	json.NewDecoder(r.Body).Decode(&contact)
+	jsonDecode(r, &contact)
 	contacts = append(contacts, contact)
-	json.NewEncoder(w).Encode(contact)
+	jsonEncode(w, contact)
 }
 
 func updateContact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	for idx, item := range contacts {
-		fmt.Println(idx)
+		_, err := fmt.Println(idx)
+		if err != nil {
+			return
+		}
 		if item.Name == params["name"] {
 			contacts = append(contacts[:idx], contacts[idx+1:]...)
 			var contact Contact
-			json.NewDecoder(r.Body).Decode(&contact)
+			jsonDecode(r, &contact)
 			contact.Name = params["name"]
 			contacts = append(contacts, contact)
-			json.NewEncoder(w).Encode(contact)
+			jsonEncode(w, contact)
 			return
 		}
 	}
@@ -109,11 +118,32 @@ func deleteContact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	for idx, item := range contacts {
-		fmt.Println(idx)
+		_, err := fmt.Println(idx)
+		if err != nil {
+			return
+		}
 		if item.Name == params["name"] {
 			contacts = append(contacts[:idx], contacts[idx+1:]...)
 			break
 		}
 	}
-	json.NewEncoder(w).Encode(contacts)
+	jsonEncode(w, contacts)
+}
+
+/*********************
+ * Utility functions *
+ *********************/
+
+func jsonEncode(w http.ResponseWriter, s any) {
+	err := json.NewEncoder(w).Encode(s)
+	if err != nil {
+		return
+	}
+}
+
+func jsonDecode(r *http.Request, pointer any) {
+	err := json.NewDecoder(r.Body).Decode(pointer)
+	if err != nil {
+		return
+	}
 }
