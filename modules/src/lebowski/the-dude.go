@@ -1,5 +1,7 @@
 package quotes
 
 func GetQuote() string {
-	return "Dude, don't be so un-dude!"
+
+	return "Yeah, well, you know, that's just, like, your opinion, man."
+
 }
