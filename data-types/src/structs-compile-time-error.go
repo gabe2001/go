@@ -7,6 +7,7 @@ func main() {
 	type person struct {
 		name string
 		age  int
+		//nickname string // not cast-able due to extra property
 	}
 
 	type animal struct {
@@ -20,7 +21,8 @@ func main() {
 	}
 
 	var a animal
-	a = animal(p)
+	//a = p // compiler no like!
+	a = animal(p) // cast person to animal
 
 	fmt.Println(a)
 

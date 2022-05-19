@@ -5,10 +5,12 @@ package main
 
 import "fmt"
 
-var AppVersion string
-
 func main() {
 
-	fmt.Println(`Version: ` + AppVersion)
+	someText := `Line 1
+Line 2
+Line 3`
+
+	fmt.Println("Lines: \n" + someText)
 
 }
