@@ -5,7 +5,6 @@
 Closures have access to variables outside if their lexical scope
 
 Could this be used to implement a stream-like function? Operate on each item in a list (array, slice)
-
 */
 package main
 

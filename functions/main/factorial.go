@@ -15,17 +15,17 @@ func main() {
 
 	for i := 0; i < len(uints64); i++ {
 		fmt.Printf("fact(%d) and ffact(%f)\n", uints64[i], floats64[i])
-		fmt.Println(fact(uints64[i]))
+		fmt.Println(ifact(uints64[i]))
 		fmt.Println(ffact(floats64[i]))
 	}
 
 }
 
-func fact(n uint64) uint64 {
+func ifact(n uint64) uint64 {
 	if n < 2 {
 		return 1
 	} else {
-		return n * fact(n-1)
+		return n * ifact(n-1)
 	}
 }
 
