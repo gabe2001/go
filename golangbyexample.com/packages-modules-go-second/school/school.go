@@ -4,7 +4,7 @@ package main
 
 import (
 	"fmt"
-	"my/math"
+	math "my/matte"
 )
 
 func main() {
