@@ -31,7 +31,7 @@ func main() {
     //req.Header.Add("Content-Type", "application/json")
     req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
     req.Header.Add("X-HP-SBS-ApplicationId", "eaas-demo")
-    req.Header.Add("X-HP-SBS-ApplicationKey", "E88SonSBS!d3m0")
+    req.Header.Add("X-HP-SBS-ApplicationKey", "AppKey_REDACTED__EDIT_ME!")
     req.Header.Add("X-HP-SBS-TestRequest", "false")
     req.Header.Add("X-HP-SBS-IsHPIApplication", "false")
     req.Header.Add("X-HP-SBS-SessionContext", "aaaaaaaa-bbbb-4ccc-dddd-eeeeeeeeeeee")
