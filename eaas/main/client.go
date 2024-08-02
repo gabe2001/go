@@ -19,6 +19,9 @@ func main() {
 
     url := "https://eaas-fut1-sbs.corp.hpecorp.net/eaas-2.1/analyzeData"
     method := "POST"
+    // Value0=<a />
+    // Value1=--template-name
+    // Value1=
     payload := strings.NewReader("Value0=%3Ca%20%2F%3E&Value1=--template-name&Value1=cecV5XmlTemplate&Value1=--use-rule&Value1=mapToSI_dev")
 
     client := &http.Client{}
